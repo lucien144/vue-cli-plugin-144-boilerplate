@@ -14,6 +14,7 @@ Check out my <a href="https://devnull.store?utm_source=github&utm_medium=link&ut
 - ❤️ XO with prettier (`yarn lint`)
 - 💄 Basic SCSS boilerplate
 - 🥾 Bootstrap 4: reboot, grid and utilites only along with all mixins
+- 🖼 Ability to load inline SVGs (`<img src="@/assets/images/logo.svg?external">`)
 - 🧹 Cleaned up Vue project template
   - Removed HelloWorld component
   - Assets removed (logo, favicon, ...)
