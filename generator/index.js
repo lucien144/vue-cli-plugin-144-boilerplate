@@ -1,5 +1,4 @@
-const fs = require('fs');
-const { log, error } = require('@vue/cli-shared-utils');
+const { done, info, log, warn, error } = require('@vue/cli-shared-utils');
 
 module.exports = (api, options = {}) => {
 	api.extendPackage({
@@ -109,21 +108,21 @@ module.exports = (api, options = {}) => {
 	api.render('./template', {});
 
 	api.onCreateComplete(() => {
+		const fs = require('fs');
+		const unlink = path => {
+			fs.unlink(path, error => {
+				if (error) {
+					warn(`There was a problem deleting "${path}"`);
+				} else {
+					done(`Successfully deleted "${path}"`);
+				}
+			});
+		};
 
-		fs.unlink('./src/components/HelloWorld.vue', err => {
-			if (error) {
-				error(err);
-			} else {
-				log('✔ Successfully removed "HelloWorld" component.');
-			}
-		});
-		fs.unlink('./src/assets/logo.png', err => {
-			if (error) {
-				error(err);
-			} else {
-				log('✔ Successfully removed "logo.png" image.');
-			}
-		});
+		unlink('./public/favicon.ico');
+		unlink('./public/favicon.ico');
+		unlink('./src/components/HelloWorld.vue');
+		unlink('./src/assets/logo.png');
 	});
 
 }
