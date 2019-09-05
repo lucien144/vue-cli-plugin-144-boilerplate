@@ -14,6 +14,8 @@ replace:
 
 <%# REPLACE %>
 <script>
+import './assets/scss/default.scss'; // eslint-disable-line import/no-unassigned-import
+
 export default {
 	components: {}
 }
