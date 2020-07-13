@@ -1,3 +1,20 @@
 /* Colors */
 
-$white: #fff;
+$colors: (
+        "white": #fff,
+        "black": #000,
+        "success": #0f0,
+        "error": #f00
+) !default;
+
+@mixin make-colors($colors, $attr, $prefix) {
+  @each $value-short, $value-long in $colors {
+    .#{$prefix}-#{$value-short} {
+      #{$attr}: #{$value-long};
+    }
+  }
+}
+
+@include make-colors($colors, 'color', 'text');
+@include make-colors($colors, 'color', 'color');
+@include make-colors($colors, 'background-color', 'bg');
