@@ -1,4 +1,11 @@
 // Fonts settings goes here.
 
-$font-size: 16px;
+$font-base: 18px;
 $font-weight-regular: normal;
+$font-weight-medium: 500;
+$font-weight-light: 300;
+$font-weight-bold: bold;
+
+@function rem($size) {
+	@return #{$size / $font-base}rem;
+}
