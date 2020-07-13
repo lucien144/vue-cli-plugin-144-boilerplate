@@ -30,6 +30,22 @@ $ vue invoke vue-cli-plugin-144-boilerplate
 $ yarn serve
 ```
 
+## Styles / SASS
+
+### Colors
+
+Colors can be defined in the `src/assets/scss/settings/__settings.colors.scss` file, add your own colors to the `$colors: ()` list. Each color gets its class based on the name: `.color-success` or `.bg-success`.
+
+### Typography
+
+Typography settings (variables, ...) is in `src/assets/scss/settings/__settings.typo.scss` file while font classes should go to `src/assets/scss/__typo.scss`. Use `rem(18px)` function for font size, it will convert pixels to rems. Ideally, use this everywhere in your project.
+
+The variable `$font-base` should be the only one with pixels.
+
+### Spacing
+
+See `src/assets/scss/settings/__settings.bootstrap.scss`, edit the `$spacers: ()` list for custom spacers. The idea is to have `.m-` `.p-` classes for each possible spacer in pixels, and first 7 spacers (`.p-0` to `.p-6`) is reserved for Bootstrap spacers in `rem`. Example: if there's a 32px spacer, create `.p-32` for it.
+
 ## Local development
 
 Every time there's a change in the plugin, this has to be run 👇 from the projects root folder (`vue create test-app && cd test-app`)
