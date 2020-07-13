@@ -7,3 +7,15 @@
 @import '../../../../node_modules/bootstrap/scss/variables';
 @import '../../../../node_modules/bootstrap/scss/mixins';
 @import '../../../../node_modules/bootstrap/scss/root';
+
+$spacers: (
+        0: 0,
+        1: ($spacer * .25),
+        2: ($spacer * .5),
+        3: $spacer,
+        4: ($spacer * 1.5),
+        5: ($spacer * 2),
+        6: ($spacer * 2.5),
+
+		16: rem(16px)
+);
