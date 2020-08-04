@@ -11,6 +11,8 @@ module.exports = (api, options = {}) => {
 			'eslint-config-xo-vue': '^2.0.2',
 			'eslint-plugin-vue': '^5.2.3',
 			'prettier-package-json': '^2.1.0',
+			'sass-loader': '^9.0.2',
+			'node-sass': '^4.14.1',
 		},
 		scripts: {
 			lint: 'prettier-package-json --write --use-tabs --tab-width 4 && xo --fix',
