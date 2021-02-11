@@ -1,0 +1,19 @@
+@font-face {
+	font-family: $font-family-base;
+	src: local('Arial bold'), local('Arial-bold'),
+	url('~@/assets/fonts/Arial-bold.woff2') format('woff2'),
+	url('~@/assets/fonts/Arial-bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: $font-family-base;
+	src: local('Arial'), local('Arial'),
+	url('~@/assets/fonts/Arial.woff2') format('woff2'),
+	url('~@/assets/fonts/Arial.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

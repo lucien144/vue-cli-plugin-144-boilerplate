@@ -3,6 +3,8 @@
 // Settings -> used with preprocessors and contain font, colors definitions, etc.
 // Generic -> reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
 // Vendor -> 3rd party plugins
+// Elements –> styling for bare HTML elements and fonts (like H1, A, etc.). These come with default styling from the browser so we can redefine them here.
 
 @import 'vendor/bootstrap.vendor';
+@import 'elements/fonts.elements';
 @import 'generic';
