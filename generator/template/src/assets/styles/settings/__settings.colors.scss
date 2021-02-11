@@ -1,4 +1,16 @@
-/* Colors settings */
+/**
+ * Colors settings
+ */
+
+// Bootstrap theme custom colors
+$secondary: #333;
+
+$custom-colors: (
+	'secondary': $secondary
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Custom color utilities: color-primary, text-primary, bg-primary
 @include make-colors($theme-colors, 'color', 'text');
 @include make-colors($theme-colors, 'color', 'color');
 @include make-colors($theme-colors, 'background-color', 'bg');
