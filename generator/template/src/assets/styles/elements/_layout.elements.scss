@@ -1,7 +1,7 @@
-// Normalize the HTML & BODY
+// Normalize HTML, BODY
 html,
 body {
-	font-size: $font-base;
+	font-size: $font-size-base;
 	font-weight: $font-weight-regular;
 	font-style: normal;
 	font-stretch: normal;
@@ -10,4 +10,9 @@ body {
 	text-align: left;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0 auto;
+	max-width: map-get($grid-breakpoints, xxl);
 }

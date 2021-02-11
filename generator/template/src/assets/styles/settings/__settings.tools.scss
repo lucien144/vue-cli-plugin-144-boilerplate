@@ -17,7 +17,7 @@
 }
 
 
-@function rem($pxval) {
+@function rem($pxval, $base: $font-size-base) {
   @if not unitless($pxval) {
     $pxval: strip-units($pxval);
   }
