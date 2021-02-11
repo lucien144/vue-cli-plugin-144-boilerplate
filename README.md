@@ -11,14 +11,13 @@ Check out my <a href="https://devnull.store?utm_source=github&utm_medium=link&ut
 ---
 
 ## Features
-- ❤️ XO with prettier (`yarn lint`)
 - 💄 Basic SCSS boilerplate
-- 🥾 Bootstrap 4: reboot, grid and utilites only along with all mixins
-- 🖼 Ability to load inline SVGs (`<img src="@/assets/images/logo.svg?external">`)
+- 🥾 Bootstrap 5: reboot, grid and utilites only along with all mixins
 - 🧹 Cleaned up Vue project template
   - Removed HelloWorld component
   - Assets removed (logo, favicon, ...)
   - Cleaned up App.vue
+- ~~prettier~~
 
 ## Installation
 
@@ -45,6 +44,12 @@ The variable `$font-base` should be the only one with pixels.
 ### Spacing
 
 See `src/assets/scss/settings/__settings.bootstrap.scss`, edit the `$spacers: ()` list for custom spacers. The idea is to have `.m-` `.p-` classes for each possible spacer in pixels, and first 7 spacers (`.p-0` to `.p-6`) is reserved for Bootstrap spacers in `rem`. Example: if there's a 32px spacer, create `.p-32` for it.
+
+### Mixins / Functions
+
+| Mixin | Description | Usage |
+|-------|-------------|-------|
+| `r()` | Converts pixel size to rem size based on `$font-base` | `r(18)` converts 18px to rem |
 
 ## Local development
 

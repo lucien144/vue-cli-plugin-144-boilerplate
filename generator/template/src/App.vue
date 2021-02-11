@@ -8,21 +8,28 @@ replace:
 
 <%# REPLACE %>
 <template>
-	<div id="app"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="color-danger pt-1">Oh, Hello World!</p>
+            </div>
+        </div>
+    </div>
 </template>
 <%# END_REPLACE %>
 
 <%# REPLACE %>
-<script>
-import './assets/scss/default.scss'; // eslint-disable-line import/no-unassigned-import
+<script lang="ts">
+import './assets/styles/default.scss';
+import { defineComponent } from 'vue';
 
-export default {
-	components: {}
-}
+export default defineComponent({
+    components: {}
+});
 </script>
 <%# END_REPLACE %>
 
 <%# REPLACE %>
-<style lang="scss">
+<style scoped lang="scss">
 </style>
 <%# END_REPLACE %>

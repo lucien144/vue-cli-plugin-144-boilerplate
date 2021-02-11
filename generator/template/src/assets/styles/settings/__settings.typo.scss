@@ -5,7 +5,3 @@ $font-weight-regular: normal;
 $font-weight-medium: 500;
 $font-weight-light: 300;
 $font-weight-bold: bold;
-
-@function rem($size) {
-	@return #{$size / $font-base}rem;
-}

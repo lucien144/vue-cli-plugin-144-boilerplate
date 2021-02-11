@@ -1,0 +1,35 @@
+/**
+ * Mixins and functions
+ */
+
+@mixin make-colors($colors, $attr, $prefix) {
+  @each $value-short, $value-long in $colors {
+    .#{$prefix}-#{$value-short} {
+      #{$attr}: #{$value-long};
+    }
+  }
+}
+
+// Px to rem -> https://github.com/nicholasruggeri/px-to-rem-sass-mixin
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: 15px;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}
+
+// Alias to @rem
+@function r($pxval) {
+  @return rem($pxval);
+}

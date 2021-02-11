@@ -3,108 +3,16 @@ const { done, info, log, warn, error } = require('@vue/cli-shared-utils');
 module.exports = (api, options = {}) => {
 	api.extendPackage({
 		dependencies: {
-			bootstrap: '^4.3.1',
-			'vue-svg-loader': '^0.12.0'
+			bootstrap: '^5.0.0-beta2'
 		},
 		devDependencies: {
-			xo: '^0.24.0',
-			'eslint-config-xo-vue': '^2.0.2',
-			'eslint-plugin-vue': '^5.2.3',
-			'prettier-package-json': '^2.1.0',
-			'sass-loader': '^9.0.2',
-			'node-sass': '^4.14.1',
+			"sass": "^1.26.5",
+			"sass-loader": "^8.0.2",
+			"prettier-package-json": "^2.1.3	",
 		},
 		scripts: {
-			lint: 'prettier-package-json --write --use-tabs --tab-width 4 && xo --fix',
+			lint: 'prettier-package-json --write --use-tabs --tab-width 4 && vue-cli-service lint',
 		},
-		prettier: {
-			'useTabs': true,
-			'singleQuote': true,
-			'tabWidth': 4,
-			'bracketSpacing': true
-		},
-		xo: {
-			'extends': [
-				'xo-vue',
-				'plugin:vue/recommended',
-				'prettier/unicorn'
-			],
-			'prettier': true,
-			'extensions': [
-				'js',
-				'vue'
-			],
-			'settings': {
-				'import/core-modules': [
-					'vuex'
-				]
-			},
-			'rules': {
-				'vue/html-indent': [
-					'error',
-					'tab'
-				],
-				'vue/max-attributes-per-line': [
-					2,
-					{
-						'singleline': 4
-					}
-				],
-				'import/extensions': [
-					'error',
-					'never',
-					{
-						'vue': 'ignorePackages',
-						'svg': 'always'
-					}
-				],
-				'import/no-unresolved': [
-					2,
-					{
-						'ignore': [
-							'vue$',
-							'svg$',
-							'^@'
-						]
-					}
-				],
-				'unicorn/filename-case': 0,
-				'no-unused-vars': [
-					'error',
-					{
-						'argsIgnorePattern': '^_'
-					}
-				],
-				'vue/component-name-in-template-casing': [
-					'error',
-					'PascalCase',
-					{
-						'registeredComponentsOnly': false,
-						'ignores': [
-							'transition'
-						]
-					}
-				],
-				'//new-cap': 'This allows for Vuex mutations like `this.SET_VALUE`',
-				'new-cap': [
-					'error',
-					{
-						'properties': false
-					}
-				],
-				'//unicorn/catch-error-name': 'Pass _error in try catch',
-				'unicorn/catch-error-name': [
-					'error',
-					{
-						'caughtErrorsIgnorePattern': '^_'
-					}
-				],
-				'object-curly-spacing': [
-					'error',
-					'always'
-				]
-			}
-		}
 	});
 
 	api.render('./template', {});
@@ -121,10 +29,25 @@ module.exports = (api, options = {}) => {
 			});
 		};
 
+		const mkdir = path => {
+			fs.mkdir(path, error => {
+				if (error) {
+					warn(`There was a problem creating "${path}"`);
+				} else {
+					done(`Successfully created "${path}"`);
+				}
+			});
+		}
+
+		// Removing unnecessary files
 		unlink('./public/favicon.ico');
 		unlink('./public/favicon.ico');
 		unlink('./src/components/HelloWorld.vue');
 		unlink('./src/assets/logo.png');
+
+		// Creating empty folders
+		mkdir('./src/assets/images/');
+		mkdir('./src/assets/fonts/');
 	});
 
 }
