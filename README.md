@@ -22,7 +22,7 @@ Check out my <a href="https://devnull.store?utm_source=github&utm_medium=link&ut
 ## Installation
 
 ```sh
-$ vue create your-app
+$ vue create --preset lucien144/vue-cli-preset your-app
 $ cd your-app
 $ yarn add https://github.com/lucien144/vue-cli-plugin-144-boilerplate.git
 $ vue invoke vue-cli-plugin-144-boilerplate
