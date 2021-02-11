@@ -8,7 +8,11 @@ module.exports = (api, options = {}) => {
 		devDependencies: {
 			"sass": "^1.26.5",
 			"sass-loader": "^8.0.2",
-			"prettier-package-json": "^2.1.3	",
+			"prettier-package-json": "^2.1.3",
+			"eslint-plugin-eslint-comments": "^3.2.0",
+			"eslint-plugin-import": "^2.22.1",
+			"eslint-plugin-promise": "^4.3.1",
+			"eslint-plugin-unicorn": "^28.0.0",
 		},
 		scripts: {
 			lint: 'prettier-package-json --write --use-tabs --tab-width 4 && vue-cli-service lint',
