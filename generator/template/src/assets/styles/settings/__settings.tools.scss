@@ -22,7 +22,6 @@
     $pxval: strip-units($pxval);
   }
 
-  $base: 15px;
   @if not unitless($base) {
     $base: strip-units($base);
   }
