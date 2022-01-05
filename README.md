@@ -26,6 +26,8 @@ $ vue create --preset lucien144/vue-cli-preset your-app
 $ cd your-app
 $ yarn add https://github.com/lucien144/vue-cli-plugin-144-boilerplate.git
 $ vue invoke vue-cli-plugin-144-boilerplate
+# WARN  There are uncommitted changes in the current repository, it's recommended to commit or stash them first.
+# Still proceed? Yes
 $ yarn serve
 ```
 
