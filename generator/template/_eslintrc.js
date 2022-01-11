@@ -22,6 +22,7 @@ module.exports = {
 				code: 150, tabWidth: 4, ignoreStrings: true,
 			},
 		],
+		'no-tabs': 'off',
 		'indent': ['error', 'tab'],
 		'semi': ['error', 'always'],
 		'quotes': ['error', 'single'],
